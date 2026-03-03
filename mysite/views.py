@@ -2300,7 +2300,7 @@ def run_getallcreativesforoutbraindup_script(request):
 
 
 def run_getallfbcreativesfordup_script(request):
-    script_path = "/home/Karmel/Amit/Amit/bulk_creative/getallfbcreativesfordup.py"
+    script_path = "/home/Karmel/Amit/Amit/bulk_creative/getallfbcreativesfordup-feb26.py"
     return execute_script(request, script_path)
 
 
