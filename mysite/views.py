@@ -27,6 +27,7 @@ import mysql.connector
 from mysql.connector import Error
 from django.shortcuts import render
 from datetime import datetime, timedelta
+import re
 
 # MySQL Configuration for script logs
 MYSQL_LOG_CONFIG = {
@@ -46,6 +47,45 @@ def get_mysql_log_connection():
     except Error as e:
         print(f"❌ Error connecting to MySQL: {e}")
         return None
+
+
+def _is_generic_failure_message(message: str) -> bool:
+    if not message:
+        return True
+    normalized = message.strip().lower()
+    return bool(
+        re.search(r"failed\s+after\s+\d+\s+attempt", normalized)
+        or normalized in {"failed", "error", "unknown error"}
+    )
+
+
+def _extract_failure_reason(result_message: str, script_output: str) -> str:
+    """Build a short, human-readable failure reason for UI message cells."""
+    base_message = (result_message or "").strip()
+    if base_message and not _is_generic_failure_message(base_message):
+        return base_message
+
+    output = script_output or ""
+    lines = [line.strip() for line in output.splitlines() if line.strip()]
+    if not lines:
+        return base_message or "Failed"
+
+    priority_markers = (
+        "Traceback",
+        "Exception",
+        "Error:",
+        "Timeout",
+        "HTTPError",
+        "ConnectionError",
+        "KeyError",
+        "ValueError",
+        "TypeError",
+    )
+    for line in reversed(lines):
+        if any(marker in line for marker in priority_markers):
+            return line[:220]
+
+    return lines[-1][:220]
 
 
 def script_logs_page(request):
@@ -118,6 +158,14 @@ def script_logs_page(request):
 
             cursor.execute(query, params)
             all_logs = cursor.fetchall()
+            for log in all_logs:
+                if log.get('status') != 'Success':
+                    log['display_message'] = _extract_failure_reason(
+                        log.get('result_message'),
+                        log.get('script_output'),
+                    )
+                else:
+                    log['display_message'] = log.get('result_message') or ''
 
             # Group logs by batch_id (or fall back to time-based for old data without batch_id)
             groups = {}
@@ -204,6 +252,14 @@ def script_logs_page(request):
 
             cursor.execute(query, params)
             individual_data = cursor.fetchall()
+            for log in individual_data:
+                if log.get('status') != 'Success':
+                    log['display_message'] = _extract_failure_reason(
+                        log.get('result_message'),
+                        log.get('script_output'),
+                    )
+                else:
+                    log['display_message'] = log.get('result_message') or ''
 
     except Error as e:
         return render(request, 'script_logs_page.html', {
