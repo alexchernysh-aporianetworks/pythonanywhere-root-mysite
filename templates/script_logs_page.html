@@ -384,6 +384,23 @@
             color: white;
         }
 
+        .action-buttons {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn-rerun {
+            background: #e6f4ea;
+            color: #276749;
+            text-decoration: none;
+        }
+
+        .btn-rerun:hover {
+            background: #38a169;
+            color: white;
+        }
+
         /* Modal */
         .modal-overlay {
             display: none;
@@ -848,9 +865,16 @@
                                                 </td>
                                                 <td class="hide-tablet">{{ script.result_message|truncatechars:40 }}</td>
                                                 <td>
-                                                    <button class="btn-action" onclick="event.stopPropagation(); showOutput('{{ script.id }}', '{{ script.label|escapejs }}')">
-                                                        📄 View
-                                                    </button>
+                                                    <div class="action-buttons">
+                                                        <button class="btn-action" onclick="event.stopPropagation(); showOutput('{{ script.id }}', '{{ script.label|escapejs }}')">
+                                                            📄 View
+                                                        </button>
+                                                        <a href="{% url 'execute_script' script.script_path %}"
+                                                           class="btn-action btn-rerun"
+                                                           onclick="event.stopPropagation(); return confirm('Rerun {{ script.label|escapejs }}?')">
+                                                            ▶ Rerun
+                                                        </a>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             {% endfor %}
@@ -908,9 +932,16 @@
                         </td>
                         <td class="hide-mobile">{{ log.result_message|truncatechars:30 }}</td>
                         <td>
-                            <button class="btn-action" onclick="showOutput('{{ log.id }}', '{{ log.label|escapejs }}')">
-                                📄 View
-                            </button>
+                            <div class="action-buttons">
+                                <button class="btn-action" onclick="showOutput('{{ log.id }}', '{{ log.label|escapejs }}')">
+                                    📄 View
+                                </button>
+                                <a href="{% url 'execute_script' log.script_path %}"
+                                   class="btn-action btn-rerun"
+                                   onclick="return confirm('Rerun {{ log.label|escapejs }}?')">
+                                    ▶ Rerun
+                                </a>
+                            </div>
                         </td>
                     </tr>
                     {% endfor %}

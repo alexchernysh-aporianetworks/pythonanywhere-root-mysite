@@ -40,7 +40,7 @@ urlpatterns = [
 ################### running-tasks page
 
     path('stop_task/<uuid:unique_code>/', views.stop_task, name='stop_task'),
-    path('run_script/<str:script_path>/', views.execute_script, name='execute_script'),
+    path('run_script/<path:script_path>/', views.execute_script, name='execute_script'),
     path('task-status/<int:task_id>/', views.task_status, name='task_status'),
     path('list_scheduled_tasks/', views.list_scheduled_tasks, name='list_scheduled_tasks'),  # Dynamic tasks view
     path('scheduled-tasks/add/', views.add_scheduled_task, name='add_scheduled_task'),
