@@ -60,7 +60,7 @@ def _is_generic_failure_message(message: str) -> bool:
 
 
 def _extract_failure_reason(result_message: str, script_output: str) -> str:
-    """Build a short, human-readable failure reason for UI message cells."""
+    """Extract the most useful failure line for detailed hover tooltip."""
     base_message = (result_message or "").strip()
     if base_message and not _is_generic_failure_message(base_message):
         return base_message
@@ -83,9 +83,9 @@ def _extract_failure_reason(result_message: str, script_output: str) -> str:
     )
     for line in reversed(lines):
         if any(marker in line for marker in priority_markers):
-            return line[:220]
+            return line
 
-    return lines[-1][:220]
+    return lines[-1]
 
 
 def script_logs_page(request):
@@ -160,12 +160,14 @@ def script_logs_page(request):
             all_logs = cursor.fetchall()
             for log in all_logs:
                 if log.get('status') != 'Success':
-                    log['display_message'] = _extract_failure_reason(
+                    log['detailed_error_message'] = _extract_failure_reason(
                         log.get('result_message'),
                         log.get('script_output'),
                     )
+                    log['display_message'] = log.get('result_message') or ''
                 else:
                     log['display_message'] = log.get('result_message') or ''
+                    log['detailed_error_message'] = ''
 
             # Group logs by batch_id (or fall back to time-based for old data without batch_id)
             groups = {}
@@ -254,12 +256,14 @@ def script_logs_page(request):
             individual_data = cursor.fetchall()
             for log in individual_data:
                 if log.get('status') != 'Success':
-                    log['display_message'] = _extract_failure_reason(
+                    log['detailed_error_message'] = _extract_failure_reason(
                         log.get('result_message'),
                         log.get('script_output'),
                     )
+                    log['display_message'] = log.get('result_message') or ''
                 else:
                     log['display_message'] = log.get('result_message') or ''
+                    log['detailed_error_message'] = ''
 
     except Error as e:
         return render(request, 'script_logs_page.html', {
