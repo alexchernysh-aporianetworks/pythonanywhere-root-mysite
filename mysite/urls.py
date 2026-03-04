@@ -2010,6 +2010,7 @@ urlpatterns = [
     path('run_Sasha_creatives_builder_script/', views.run_Sasha_creatives_builder_script, name='run_Sasha_creatives_builder_script'),
     path('run_fetch_all_articles_summaries_script/', views.run_fetch_all_articles_summaries_script, name='run_fetch_all_articles_summaries_script'),
     path('run_fetch_specific_articles_with_content_script/', views.run_fetch_specific_articles_with_content_script, name='run_fetch_specific_articles_with_content_script'),
+    path('run_articles_db_manager_script/', views.run_articles_db_manager_script, name='run_articles_db_manager_script'),
 
 
 

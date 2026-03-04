@@ -2719,6 +2719,10 @@ def run_fetch_specific_articles_with_content_script(request):
     script_path = "/home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/fetch_specific_articles_with_content.py"
     return execute_script(request, script_path)
 
+def run_articles_db_manager_script(request):
+    script_path = "/home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/articles_db_manager.py"
+    return execute_script(request, script_path)
+
 def media_buyers_scripts(request):
     return render(request, "media_buyers_scripts.html")
 

@@ -103,5 +103,16 @@
             <p class="meta">Script: /home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/fetch_specific_articles_with_content.py</p>
         </div>
     </div>
+
+    <div class="section">
+        <h2 class="section-title">Articles DB Manager — Duplicate &amp; Edit (ToUp tab)</h2>
+        <div class="button-container">
+            <form method="get" action="{% url 'run_articles_db_manager_script' %}">
+                <button type="submit">Run articles_db_manager</button>
+            </form>
+            <p class="meta">Script: /home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/articles_db_manager.py</p>
+            <p class="meta">Reads the <strong>ToUp</strong> tab, duplicates each article by ID, applies image/title/text edits, writes Status + New link back to the sheet.</p>
+        </div>
+    </div>
 </body>
 </html>
