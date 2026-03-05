@@ -2309,6 +2309,8 @@ urlpatterns = [
     path('run_Sahar_keywordstokeywords_v3_script/', views.run_Sahar_keywordstokeywords_v3_script, name='run_Sahar_keywordstokeywords_v3_script'),
     path('run_Sahar_creatives_builder_script/', views.run_Sahar_creatives_builder_script, name='run_Sahar_creatives_builder_script'),
 
+    path('media_buyer_Jenia_page/', views.media_buyer_Jenia_page, name='media_buyer_Jenia_page'),
+
 
 
 

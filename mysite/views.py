@@ -7862,3 +7862,7 @@ def run_Sahar_keywordstokeywords_v3_script(request):
 def run_Sahar_creatives_builder_script(request):
     script_path = "/home/Karmel/Aporia_Networks/workflows/creative_builder_dev/remote/creatives_builder_Sahar_remote.py"
     return execute_script(request, script_path)
+
+
+def media_buyer_Jenia_page(request):
+    return render(request, 'media_buyers/Jenia.html')
