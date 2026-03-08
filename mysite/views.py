@@ -425,6 +425,12 @@ def execute_script(request, script_path):
     Create a new task entry and execute the script with a unique execution code.
     Prevent running the same script if it's already running.
     """
+    script_path = (script_path or "").strip()
+    if not script_path.startswith("/"):
+        # Paths coming from the generic rerun URL can lose the leading slash
+        # when an absolute Linux path is embedded in the route.
+        script_path = f"/{script_path}"
+
     # Check if the script is already running
     existing_task = ScriptTask.objects.filter(
         script_name=script_path,
