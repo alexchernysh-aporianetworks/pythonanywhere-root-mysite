@@ -1384,6 +1384,31 @@ def run_taboola_getcomplianceidsfrominuvo_script(request):
 
 
 
+
+
+
+    # Tonic Compliance
+
+
+
+
+def run_gettingtaboolarsocids2026_script(request):
+    script_path = "/home/Karmel/Amit/Taboola/Compliance/gettingtaboolarsocids2026.py"
+    return execute_script(request, script_path)
+
+
+def run_taboola_getcomplianceids_tonic2026_script(request):
+    script_path = "/home/Karmel/Amit/Taboola/Compliance/taboola_getcomplianceids_tonic2026.py"
+    return execute_script(request, script_path)
+
+
+def run_taboolacomplianceupdate2026_script(request):
+    script_path = "/home/Karmel/Amit/Taboola/Compliance/taboolacomplianceupdate2026.py"
+    return execute_script(request, script_path)
+
+
+
+
 ############## Outbrain
 
 
@@ -1860,9 +1885,13 @@ def run_googlenospendl7days_Shinez_script(request):
 
 
 def run_googleopt2026_script(request):
-    script_path = "/home/Karmel/Amit/Google/googleopt2026 1.py"
+    script_path = "/home/Karmel/Amit/Google/googleopt2026.py"
     return execute_script(request, script_path)
 
+
+def run_googleopt2026_shz_script(request):
+    script_path = "/home/Karmel/Amit/Google/googleopt2026_shz.py"
+    return execute_script(request, script_path)
 
 
 

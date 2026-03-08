@@ -251,6 +251,17 @@ urlpatterns = [
     path('run_taboola_getcomplianceidsfrominuvo_script/', views.run_taboola_getcomplianceidsfrominuvo_script, name='run_taboola_getcomplianceidsfrominuvo_script'),
 
 
+
+
+    # Tonic Compliance
+
+
+    path('run_gettingtaboolarsocids2026_script/', views.run_gettingtaboolarsocids2026_script, name='run_gettingtaboolarsocids2026_script'),
+    path('run_taboola_getcomplianceids_tonic2026_script/', views.run_taboola_getcomplianceids_tonic2026_script, name='run_taboola_getcomplianceids_tonic2026_script'),
+    path('run_taboolacomplianceupdate2026_script/', views.run_taboolacomplianceupdate2026_script, name='run_taboolacomplianceupdate2026_script'),
+
+
+
 ################### Mediago page
 
 
@@ -403,6 +414,7 @@ urlpatterns = [
     path('run_gglpctsmax_script/', views.run_gglpctsmax_script, name='run_gglpctsmax_script'),
     path('run_gglpctsdemandgen_script/', views.run_gglpctsdemandgen_script, name='run_gglpctsdemandgen_script'),
     path('run_googleopt2026_script/', views.run_googleopt2026_script, name='run_googleopt2026_script'),
+    path('run_googleopt2026_shz_script/', views.run_googleopt2026_shz_script, name='run_googleopt2026_shz_script'),
 
 
     path('run_allgoogleyes_v2_script/', views.run_allgoogleyes_v2_script, name='run_allgoogleyes_v2_script'),
