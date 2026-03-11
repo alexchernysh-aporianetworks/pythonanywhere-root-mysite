@@ -480,6 +480,8 @@ urlpatterns = [
     path('run_creative_bulk_newpolicycheckforall_script/', views.run_creative_bulk_newpolicycheckforall_script, name='run_creative_bulk_newpolicycheckforall_script'),
 
     path('run_Jenia_creatives_builder_script/', views.run_Jenia_creatives_builder_script, name='run_Jenia_creatives_builder_script'),
+    path('run_Jenia2_creatives_builder_script/', views.run_Jenia2_creatives_builder_script, name='run_Jenia2_creatives_builder_script'),
+    path('run_Jenia3_creatives_builder_script/', views.run_Jenia3_creatives_builder_script, name='run_Jenia3_creatives_builder_script'),
 
 
     ######

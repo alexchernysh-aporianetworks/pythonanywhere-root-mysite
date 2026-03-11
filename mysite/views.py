@@ -2119,9 +2119,13 @@ def run_Jenia_creatives_builder_script(request):
     script_path = "/home/Karmel/Aporia_Networks/workflows/creative_builder_dev/remote/creatives_builder_Jenia_remote.py"
     return execute_script(request, script_path)
 
-#def run_Jenia_creatives_builder_script(request):
-#    script_path = "/home/Karmel/Aporia_Networks/workflows/creative_builder_dev/remote/creatives_builder_Jenia_remote.py"
-#    return execute_script(request, script_path)
+def run_Jenia2_creatives_builder_script(request):
+    script_path = "/home/Karmel/Aporia_Networks/workflows/creative_builder_dev/remote/creatives_builder_Jenia2_remote.py"
+    return execute_script(request, script_path)
+
+def run_Jenia3_creatives_builder_script(request):
+    script_path = "/home/Karmel/Aporia_Networks/workflows/creative_builder_dev/remote/creatives_builder_Jenia3_remote.py"
+    return execute_script(request, script_path)
 
         ########
 
