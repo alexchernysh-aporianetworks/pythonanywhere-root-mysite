@@ -1198,6 +1198,11 @@ def run_tabopt2026_script(request):
     return execute_script(request, script_path)
 
 
+def run_tabopt_status_script(request):
+    script_path = "/home/Karmel/Amit/Taboola/Optimization/tabopt2026.py"
+    return execute_script(request, script_path)
+
+
 # Taboola page - Wanduum
 
 
@@ -1444,6 +1449,10 @@ def run_outbrainNeedToArchive_script(request):
     script_path = "/home/Karmel/Amit/Outbrain/Archived/Archived2.py"
     return execute_script(request, script_path)
 
+
+def run_obnospendl14_script(request):
+    script_path = "/home/Karmel/Amit/Outbrain/Reports/obnospendl14.py"
+    return execute_script(request, script_path)
 
 
 
@@ -1931,6 +1940,16 @@ def run_blockplacementsonggl_script(request):
 
 
 
+def run_googlerejectl7days_script(request):
+    script_path = "/home/Karmel/Amit/Google/Compliance/googlerejectl7days.py"
+    return execute_script(request, script_path)
+
+
+def run_googleappeal7days_script(request):
+    script_path = "/home/Karmel/Amit/Google/Compliance/googleappeal7days.py"
+    return execute_script(request, script_path)
+
+
 
     # Send To Taboola
 
@@ -2200,8 +2219,40 @@ def run_Jenia_gcpgetdataforjenia_script(request):
 
 
 
-        ########
 
+        ######## Blast From The Past
+
+
+
+
+def run_blastfromthepast_gettaboolacreatives_script(request):
+    script_path = "/home/Karmel/Amit/Amit/blastfromthepast/blastfromthepast_gettaboolacreatives.py"
+    return execute_script(request, script_path)
+
+
+def run_blastfromthepast_getoutbraincreatives_script(request):
+    script_path = "/home/Karmel/Amit/Amit/blastfromthepast/blastfromthepast_getoutbraincreatives.py"
+    return execute_script(request, script_path)
+
+
+def run_blastfromthepast_getgooglecreatives_script(request):
+    script_path = "/home/Karmel/Amit/Amit/blastfromthepast/blastfromthepast_getgooglecreatives.py"
+    return execute_script(request, script_path)
+
+
+def run_blastfromthepast_getfacebookcreatives_script(request):
+    script_path = "/home/Karmel/Amit/Amit/blastfromthepast/blastfromthepast_getfacebookcreatives.py"
+    return execute_script(request, script_path)
+
+
+def run_getolddatafromfiles_script(request):
+    script_path = "/home/Karmel/Amit/Amit/blastfromthepast/getolddatafromfiles.py"
+    return execute_script(request, script_path)
+
+
+
+
+        ########
 
 
 
@@ -2750,17 +2801,6 @@ def sasha_page(request):
 def rss_articles_db_page(request):
     return render(request, "rss_articles_db_page.html")
 
-def run_fetch_all_articles_summaries_script(request):
-    script_path = "/home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/fetch_all_articles_summaries.py"
-    return execute_script(request, script_path)
-
-def run_fetch_specific_articles_with_content_script(request):
-    script_path = "/home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/fetch_specific_articles_with_content.py"
-    return execute_script(request, script_path)
-
-def run_articles_db_manager_script(request):
-    script_path = "/home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/articles_db_manager.py"
-    return execute_script(request, script_path)
 
 def media_buyers_scripts(request):
     return render(request, "media_buyers_scripts.html")
@@ -6891,6 +6931,7 @@ def run_Maya_creatives_builder_script(request):
 
 
 
+############## RSS Page
 
 
 
@@ -6898,10 +6939,27 @@ def run_Maya_creatives_builder_script(request):
 
 
 
+def run_fetch_all_articles_summaries_script(request):
+    script_path = "/home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/fetch_all_articles_summaries.py"
+    return execute_script(request, script_path)
+
+def run_fetch_specific_articles_with_content_script(request):
+    script_path = "/home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/fetch_specific_articles_with_content.py"
+    return execute_script(request, script_path)
+
+def run_articles_db_manager_script(request):
+    script_path = "/home/Karmel/Aporia_Networks/workflows/articles_db_fetcher/articles_db_manager.py"
+    return execute_script(request, script_path)
 
 
 
+def run_getdataofarticleforrss_script(request):
+    script_path = "/home/Karmel/Amit/RSS/getdataofarticleforrss.py"
+    return execute_script(request, script_path)
 
+def run_rss_writer_script(request):
+    script_path = "/home/Karmel/Amit/RSS/rss_writer.py"
+    return execute_script(request, script_path)
 
 
 

@@ -193,6 +193,7 @@ urlpatterns = [
     path('run_maxcpaandcpcbidstaboolaopt_script/', views.run_maxcpaandcpcbidstaboolaopt_script, name='run_maxcpaandcpcbidstaboolaopt_script'),
     path('run_pausetaboolal7nospend_script/', views.run_pausetaboolal7nospend_script, name='run_pausetaboolal7nospend_script'),
     path('run_tabopt2026_script/', views.run_tabopt2026_script, name='run_tabopt2026_script'),
+    path('run_tabopt_status_script/', views.run_tabopt_status_script, name='run_tabopt_status_script'),
 
 
     # Taboola page - Wanduum
@@ -333,6 +334,7 @@ urlpatterns = [
     path('run_inuvoyesob_script/', views.run_inuvoyesob_script, name='run_inuvoyesob_script'),
     path('run_obcreativesl14_script/', views.run_obcreativesl14_script, name='run_obcreativesl14_script'),
     path('run_outbrainNeedToArchive_script/', views.run_outbrainNeedToArchive_script, name='run_outbrainNeedToArchive_script'),
+    path('run_obnospendl14_script/', views.run_obnospendl14_script, name='run_obnospendl14_script'),
     path('run_obyes_script/', views.run_obyes_script, name='run_obyes_script'),
 
 
@@ -430,7 +432,8 @@ urlpatterns = [
     path('run_google_getcomplianceidsfromtonic_script/', views.run_google_getcomplianceidsfromtonic_script, name='run_google_getcomplianceidsfromtonic_script'),
     path('run_getcreativesfromtaboolatogoogle_script/', views.run_getcreativesfromtaboolatogoogle_script, name='run_getcreativesfromtaboolatogoogle_script'),
     path('run_blockplacementsonggl_script/', views.run_blockplacementsonggl_script, name='run_blockplacementsonggl_script'),
-
+    path('run_googlerejectl7days_script/', views.run_googlerejectl7days_script, name='run_googlerejectl7days_script'),
+    path('run_googleappeal7days_script/', views.run_googleappeal7days_script, name='run_googleappeal7days_script'),
 
 
     # Send To Taboola
@@ -512,6 +515,17 @@ urlpatterns = [
     path('run_Jenia_newpolicycheckforall_script/', views.run_Jenia_newpolicycheckforall_script, name='run_Jenia_newpolicycheckforall_script'),
     path('run_Jenia_googlepolicychecker_script/', views.run_Jenia_googlepolicychecker_script, name='run_Jenia_googlepolicychecker_script'),
     path('run_Jenia_gcpgetdataforjenia_script/', views.run_Jenia_gcpgetdataforjenia_script, name='run_Jenia_gcpgetdataforjenia_script'),
+
+
+    ######
+
+
+
+    path('run_blastfromthepast_gettaboolacreatives_script/', views.run_blastfromthepast_gettaboolacreatives_script, name='run_blastfromthepast_gettaboolacreatives_script'),
+    path('run_blastfromthepast_getoutbraincreatives_script/', views.run_blastfromthepast_getoutbraincreatives_script, name='run_blastfromthepast_getoutbraincreatives_script'),
+    path('run_blastfromthepast_getgooglecreatives_script/', views.run_blastfromthepast_getgooglecreatives_script, name='run_blastfromthepast_getgooglecreatives_script'),
+    path('run_blastfromthepast_getfacebookcreatives_script/', views.run_blastfromthepast_getfacebookcreatives_script, name='run_blastfromthepast_getfacebookcreatives_script'),
+    path('run_getolddatafromfiles_script/', views.run_getolddatafromfiles_script, name='run_getolddatafromfiles_script'),
 
 
     ######
@@ -2021,10 +2035,7 @@ urlpatterns = [
     path('run_Or_keywordstokeywords_v3_script/', views.run_Or_keywordstokeywords_v3_script, name='run_Or_keywordstokeywords_v3_script'),
 
     path('run_Or_creatives_builder_script/', views.run_Or_creatives_builder_script, name='run_Or_creatives_builder_script'),
-    path('run_Sasha_creatives_builder_script/', views.run_Sasha_creatives_builder_script, name='run_Sasha_creatives_builder_script'),
-    path('run_fetch_all_articles_summaries_script/', views.run_fetch_all_articles_summaries_script, name='run_fetch_all_articles_summaries_script'),
-    path('run_fetch_specific_articles_with_content_script/', views.run_fetch_specific_articles_with_content_script, name='run_fetch_specific_articles_with_content_script'),
-    path('run_articles_db_manager_script/', views.run_articles_db_manager_script, name='run_articles_db_manager_script'),
+
 
 
 
@@ -2044,13 +2055,24 @@ urlpatterns = [
 
 
 
+############ RSS page
 
 
 
 
+    path('run_fetch_all_articles_summaries_script/', views.run_fetch_all_articles_summaries_script, name='run_fetch_all_articles_summaries_script'),
+    path('run_fetch_specific_articles_with_content_script/', views.run_fetch_specific_articles_with_content_script, name='run_fetch_specific_articles_with_content_script'),
+    path('run_articles_db_manager_script/', views.run_articles_db_manager_script, name='run_articles_db_manager_script'),
+    path('run_getdataofarticleforrss_script/', views.run_getdataofarticleforrss_script, name='run_getdataofarticleforrss_script'),
+    path('run_rss_writer_script/', views.run_rss_writer_script, name='run_rss_writer_script'),
 
 
 
+############ Sasha Test
+
+
+
+    path('run_Sasha_creatives_builder_script/', views.run_Sasha_creatives_builder_script, name='run_Sasha_creatives_builder_script'),
 
 
 

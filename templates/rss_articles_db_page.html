@@ -114,5 +114,31 @@
             <p class="meta">Reads the <strong>ToUp</strong> tab, duplicates each article by ID, applies image/title/text edits, writes Status + New link back to the sheet.</p>
         </div>
     </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h3 class="section-title">ReWrite Section</h3>
+        <div class="button-container">
+
+
+    <form method="get" action="{% url 'run_getdataofarticleforrss_script' %}">
+    <button type="submit">Run Get data of article for RSS Script</button>
+    </form>
+
+
+    <form method="get" action="{% url 'run_rss_writer_script' %}">
+    <button type="submit">Run RSS rewriter Script</button>
+    </form>
+
+
+
+
+
+
+    </div>
+    </div>
+
 </body>
 </html>
